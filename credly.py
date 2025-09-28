@@ -171,7 +171,7 @@ class Credly:
                     issue_date = date_match.group(1)
         
         img_src = img.get("src", "")
-        img_src = img_src.replace("https://images.credly.com/", "https://images.credly.com/size/80x80/")
+        img_src = img_src.replace("https://images.credly.com/", "https://images.credly.com/size/120x120/")
         
         href = ""
         # Try to find the div with role="button" that contains the href
@@ -278,7 +278,7 @@ class Credly:
         # Use HTML img tags with explicit size instead of markdown image syntax
         return "\n".join(
             map(
-                lambda it: f'<a href="{it["href"]}" title="{it["title"]}"><img src="{it["img"]}" alt="{it["title"]}" width="80" height="80"></a>',
+                lambda it: f'<a href="{it["href"]}" title="{it["title"]}"><img src="{it["img"]}" alt="{it["title"]}" width="120" height="120"></a>',
                 valid_badges,
             )
         )
